@@ -1,0 +1,50 @@
+@import '../../styles/extends';
+
+.Search {
+  @extend %display;
+  width: 18.75rem;
+  height: 2.5rem;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 12.5rem;
+  }
+
+  &__image {
+    width: 1.125rem;
+    margin-right: 0.3125rem;
+  }
+
+  &__input {
+    display: block;
+    width: 16.75rem;
+    padding: 0.7rem;
+    border: none;
+    font-size: 0.875rem;
+    line-height: $rem;
+    color: $svg-color;
+
+    @media (max-width: 768px) {
+      width: 11.25rem;
+    }
+  }
+
+  &__input:focus-visible {
+    outline: none;
+  }
+
+  &:focus, &:focus-visible, &:focus-within {
+    border-bottom: 0.125rem solid #E97F03;
+    transition: $transition;
+  }
+
+  &:focus-within > &__image {
+    fill: $primary-color;
+    transition: $transition;
+  }
+
+  &:hover > &__image {
+    fill: $primary-color;
+    transition: $transition;
+  }
+}
