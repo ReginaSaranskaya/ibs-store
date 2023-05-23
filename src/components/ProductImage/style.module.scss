@@ -1,0 +1,37 @@
+@import "../../styles/extends";
+
+.ProductImage {
+  @extend %display;
+  border: 1px solid #F2F2F2;
+  align-self: stretch;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    justify-content: center;
+    border: none;
+    background: linear-gradient(360deg, #00000026 0%, #00000000 50%);
+  }
+
+  &__container {
+    @extend %display;
+    width: 18.625rem;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      aspect-ratio: 3 / 1;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 9.357rem;
+    object-fit: cover;
+
+    @media (max-width: 768px){
+      width: 40%;
+    }
+  }
+}
