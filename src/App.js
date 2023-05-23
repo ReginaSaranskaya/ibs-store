@@ -1,10 +1,16 @@
-import './App.css';
+import React from "react";
+
+import CatalogPage from "./Pages/CatalogPage";
+import Provider from "./context/Search/Provider";
+
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+      <Provider>
+        <div className="App">
+          <CatalogPage />
+        </div>
+      </Provider>
   );
 }
 
