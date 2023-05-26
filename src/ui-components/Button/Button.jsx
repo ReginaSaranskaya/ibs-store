@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
 import styles from "./style.module.scss";
 
-class Button extends Component {
-  render() {
-    return <button className={styles.Button}>Add to cart</button>;
-  }
-}
+const Button = () => (
+  <button type="button" className={styles.Button}>
+    Add to cart
+  </button>
+);
 
 export default Button;

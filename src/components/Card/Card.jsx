@@ -1,33 +1,23 @@
-import React, {Component} from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import { ReactComponent as Like } from './like.svg';
-import { ReactComponent as Unlike } from './unlike.svg';
+import { ReactComponent as Like } from "./like.svg";
+import { ReactComponent as Unlike } from "./unlike.svg";
 import styles from "./style.module.scss";
 
-
-class Card extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-          <a href="#" id={this.props.id} className={styles.Card}>
-
-              <div className={styles.Card__like}>
-                {this.props.like ? <Like /> : <Unlike />}
-              </div>
-              <div className={styles.Card__imageWrapper}>
-                <img className={styles.Card__image} src={this.props.picture} alt={this.props.alt}/>
-              </div>
-              <h3 className={styles.Card__title}>{this.props.name}</h3>
-              <div className={styles.Card__price}>&#36; {this.props.price}</div>
-          </a>
-    );
-  }
-}
+const Card = ({ id, name, alt, like, price, picture }) => {
+  return (
+    <Link to="/item" id={id} className={styles.Card}>
+      <div className={styles.Card__like}>{like ? <Like /> : <Unlike />}</div>
+      <div className={styles.Card__imageWrapper}>
+        <img className={styles.Card__image} src={picture} alt={alt} />
+      </div>
+      <h3 className={styles.Card__title}>{name}</h3>
+      <div className={styles.Card__price}>&#36; {price}</div>
+    </Link>
+  );
+};
 
 Card.propTypes = {
   id: PropTypes.string,

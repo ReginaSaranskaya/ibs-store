@@ -1,6 +1,10 @@
 @import "../../styles/extends";
 
 .ProductInfo {
+  @media (max-width: 768px){
+    padding: 16px 24px;
+  }
+
   &__title {
     margin-bottom: $rem;
     font-family: $bold;

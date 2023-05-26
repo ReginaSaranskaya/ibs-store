@@ -1,35 +1,23 @@
-import React, {Component} from 'react';
+import React, { useMemo, useState } from "react";
 import PropTypes from "prop-types";
 
-import {Context} from "./context";
+import Context from "./context";
 
-class Provider extends Component {
-  constructor() {
-    super();
-    this.state = {
-      changeSearch: "",
-    }
+const Provider = ({ children }) => {
+  const [search, setSearch] = useState("");
 
-    this.handleChange = this.handleChange.bind(this);
-  }
+  const handleChange = (str) => setSearch(str);
 
-  handleChange(str) {
-    this.setState ({
-      changeSearch: str
-    });
-  }
+  const value = useMemo(
+    () => ({ value: search, change: handleChange }),
+    [search]
+  );
 
-  render() {
-    return (
-      <Context.Provider value={{ value: this.state.changeSearch, change: this.handleChange }}>
-        {this.props.children}
-      </Context.Provider>
-    );
-  }
-}
+  return <Context.Provider value={value}>{children}</Context.Provider>;
+};
 
 Provider.propTypes = {
-  children: PropTypes.node
-}
+  children: PropTypes.node,
+};
 
 export default Provider;
