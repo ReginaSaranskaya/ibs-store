@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { getItem } from "../../api";
 import ProductImage from "../../components/ProductImage/ProductImage";
 import ProductInfo from "../../components/ProductInfo/ProductInfo";
 import styles from "./style.module.scss";
+import { fetchItem } from "../../state/productSlice/productActions";
 
 const Product = () => {
-  const [productInfo, setProductInfo] = useState();
+  const productInfo = useSelector((state) => state.product.item);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    getItem().then((product) => setProductInfo(product));
-  });
+    dispatch(fetchItem());
+  }, [dispatch]);
 
   return (
     productInfo && (

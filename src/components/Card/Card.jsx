@@ -8,7 +8,7 @@ import styles from "./style.module.scss";
 
 const Card = ({ id, name, alt, like, price, picture }) => {
   return (
-    <Link to="/item" id={id} className={styles.Card}>
+    <Link to="/product" id={id} className={styles.Card}>
       <div className={styles.Card__like}>{like ? <Like /> : <Unlike />}</div>
       <div className={styles.Card__imageWrapper}>
         <img className={styles.Card__image} src={picture} alt={alt} />
