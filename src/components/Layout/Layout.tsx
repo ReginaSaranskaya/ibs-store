@@ -1,8 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router";
 
-import styles from "./style.module.scss";
 import Header from "../Header/Header";
+
+import styles from "./style.module.scss";
 
 const Layout = () => {
   return (

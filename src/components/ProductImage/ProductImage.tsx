@@ -1,9 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import styles from "./style.module.scss";
 
-const ProductImage = ({ src, alt }) => {
+interface ProductImageProps {
+  src: string;
+  alt: string;
+}
+
+const ProductImage: React.FC<ProductImageProps> = ({ src, alt }) => {
   return (
     <div className={styles.ProductImage}>
       <div className={styles.ProductImage__container}>
@@ -11,11 +15,6 @@ const ProductImage = ({ src, alt }) => {
       </div>
     </div>
   );
-};
-
-ProductImage.propTypes = {
-  src: PropTypes.string,
-  alt: PropTypes.string,
 };
 
 export default ProductImage;

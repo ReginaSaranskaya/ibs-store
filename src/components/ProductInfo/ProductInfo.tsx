@@ -1,13 +1,28 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-import Counter from "../../ui-components/Counter/Counter";
-import Button from "../../ui-components/Button/Button";
-import { ReactComponent as Like } from "../Card/like.svg";
-import { ReactComponent as Unlike } from "../Card/unlike.svg";
+import Counter from "@/ui-components/Counter/Counter";
+import Button from "@/ui-components/Button/Button";
+
+import { ReactComponent as Like } from "@/assets/images/like.svg";
+import { ReactComponent as Unlike } from "@/assets/images/unlike.svg";
+
 import styles from "./style.module.scss";
 
-const ProductInfo = ({ name, like, description, price, details }) => {
+export interface Props {
+  name: string;
+  like: boolean;
+  description: string;
+  price: number;
+  details: string;
+}
+
+const ProductInfo: React.FC<Props> = ({
+  name,
+  like,
+  description,
+  price,
+  details,
+}) => {
   return (
     <div className={styles.ProductInfo}>
       <h1 className={styles.ProductInfo__title}>{name}</h1>
@@ -24,14 +39,6 @@ const ProductInfo = ({ name, like, description, price, details }) => {
       </div>
     </div>
   );
-};
-
-ProductInfo.propTypes = {
-  name: PropTypes.string,
-  description: PropTypes.string,
-  details: PropTypes.string,
-  price: PropTypes.number,
-  like: PropTypes.bool,
 };
 
 export default ProductInfo;
