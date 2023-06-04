@@ -1,8 +1,8 @@
-@import "../../styles/extends";
+@import "../../assets/styles/extends";
 
 .Counter {
   @extend %display;
-  width: 17%;
+  width: 26%;
   min-width: 7.5rem;
   justify-content: start;
 

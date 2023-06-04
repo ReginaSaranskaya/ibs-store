@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import styles from "./style.module.scss";
 
-const Counter = () => {
+const Counter: React.FC = () => {
   const [count, setCount] = useState(1);
 
   const decrement = () => {
@@ -13,7 +13,7 @@ const Counter = () => {
     setCount((prevCount) => prevCount + 1);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setCount(Number(e.target.value));
   };

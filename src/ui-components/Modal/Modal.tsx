@@ -1,9 +1,14 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import styles from "./style.module.scss";
 
-const Modal = ({ isVisible, error, message }) => {
+interface Props {
+  error?: number;
+  message: string;
+  isVisible: boolean;
+}
+
+const Modal: React.FC<Props> = ({ isVisible, error, message }) => {
   return (
     isVisible && (
       <div className={isVisible ? styles.Modal__active : styles.Modal}>
@@ -14,14 +19,6 @@ const Modal = ({ isVisible, error, message }) => {
       </div>
     )
   );
-};
-
-Modal.propTypes = {
-  isVisible: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-  ),
-  error: PropTypes.number,
-  message: PropTypes.string,
 };
 
 export default Modal;
