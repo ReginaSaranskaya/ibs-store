@@ -1,7 +1,8 @@
-@import "../../styles/extends";
+@import "../../assets/styles/extends";
 
 .Product {
   @extend %display;
+  justify-content: flex-start;
   gap: $rem;
 
   @media (max-width: 768px) {
