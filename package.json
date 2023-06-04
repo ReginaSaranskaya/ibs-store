@@ -1,5 +1,5 @@
 {
-  "name": "ibs-store",
+  "name": "ibs-store-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,8 +8,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
-    "localforage": "^1.10.0",
-    "match-sorter": "^6.3.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -19,15 +17,12 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "sass": "^1.62.1",
-    "sort-by": "^1.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint ./src/**/*.{js,jsx} --fix"
+    "start": "craco start",
+    "build": "craco build",
+    "lint": "eslint ./src/**/*.{ts,tsx} --fix"
   },
   "browserslist": {
     "production": [
@@ -42,8 +37,15 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "@types/node": "^20.2.5",
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
     "eslint": "^8.41.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
@@ -51,6 +53,11 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "^2.8.8",
-    "prettier-eslint": "^15.0.1"
-  }
+    "prettier-eslint": "^15.0.1",
+    "typescript": "^5.0.4"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
