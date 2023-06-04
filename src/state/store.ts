@@ -1,6 +1,7 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import catalogSlice from "./catalogSlice";
+
 import productSlice from "./productSlice";
+import catalogSlice from "./catalogSlice";
 
 const rootReducer = combineReducers({
   catalog: catalogSlice,
@@ -10,5 +11,8 @@ const rootReducer = combineReducers({
 const store = configureStore({
   reducer: rootReducer,
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export default store;
