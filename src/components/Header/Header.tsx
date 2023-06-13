@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
+import { IconButton, Stack } from "@mui/material";
 
+import Cart from "@mui/icons-material/ShoppingCartOutlined";
+import Account from "@mui/icons-material/AccountCircleOutlined";
 import Context from "@/context/Search/context";
 import Search from "@/ui-components/Search/Search";
-import { ReactComponent as Cart } from "@/assets/images/cart.svg";
-import { ReactComponent as Personal } from "@/assets/images/personal.svg";
 
-import styles from "./style.module.scss";
+import { styleHeaderBox, styleLink } from "@/components/Header/styles";
 
 const Header: React.FC = () => {
   const context = useContext(Context);
@@ -15,17 +16,17 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className={styles.Header}>
+    <Stack sx={styleHeaderBox} direction="row" component="header">
       <Search handleChange={handleChange} value={context?.value} />
-      <div className={styles.Header__wrapper}>
-        <a href="#" className={styles.Header__link}>
-          <Cart className={styles.Header__icon} />
-        </a>
-        <a href="#" className={styles.Header__link}>
-          <Personal className={styles.Header__icon} />
-        </a>
-      </div>
-    </header>
+      <Stack direction="row" spacing={2.5}>
+        <IconButton sx={styleLink}>
+          <Cart />
+        </IconButton>
+        <IconButton sx={styleLink}>
+          <Account />
+        </IconButton>
+      </Stack>
+    </Stack>
   );
 };
 

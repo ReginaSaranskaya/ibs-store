@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import type { AxiosError } from "axios";
+import { Modal, Box, Typography } from "@mui/material";
 
 import { instance } from "@/api";
-import Modal from "../../ui-components/Modal/Modal";
+import { styleModal, styleText } from "@/components/ErrorModal/styles";
 
 export interface Error {
   status?: number;
@@ -29,7 +30,14 @@ const ErrorModal: React.FC = () => {
 
   return (
     error && (
-      <Modal isVisible={!!error} error={error.status} message={error.message} />
+      <Modal open={!!error}>
+        <Box sx={styleModal}>
+          <Typography sx={styleText} variant="h1">
+            {error.status}
+          </Typography>
+          <Typography variant="body1">{error.message}</Typography>
+        </Box>
+      </Modal>
     )
   );
 };

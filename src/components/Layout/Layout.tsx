@@ -1,16 +1,16 @@
 import React from "react";
+import { Box } from "@mui/material";
 import { Outlet } from "react-router";
 
 import Header from "../Header/Header";
-
-import styles from "./style.module.scss";
+import { styleContainer } from "@/components/Layout/styles";
 
 const Layout = () => {
   return (
-    <div className={styles.Container}>
+    <Box sx={styleContainer}>
       <Header />
       <Outlet />
-    </div>
+    </Box>
   );
 };
 

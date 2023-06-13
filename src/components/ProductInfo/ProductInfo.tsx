@@ -1,12 +1,14 @@
 import React from "react";
+import { Box, Stack, Typography, Button } from "@mui/material";
 
 import Counter from "@/ui-components/Counter/Counter";
-import Button from "@/ui-components/Button/Button";
-
-import { ReactComponent as Like } from "@/assets/images/like.svg";
-import { ReactComponent as Unlike } from "@/assets/images/unlike.svg";
-
-import styles from "./style.module.scss";
+import Like from "@/ui-components/Like/Like";
+import {
+  styleButton,
+  styleDescription,
+  styleInfoBox,
+  styleTitle,
+} from "@/components/ProductInfo/styles";
 
 export interface Props {
   name: string;
@@ -24,20 +26,40 @@ const ProductInfo: React.FC<Props> = ({
   details,
 }) => {
   return (
-    <div className={styles.ProductInfo}>
-      <h1 className={styles.ProductInfo__title}>{name}</h1>
-      <p className={styles.ProductInfo__description}>{description}</p>
-      <h2 className={styles.ProductInfo__title}>Details</h2>
-      <p className={styles.ProductInfo__description}>{details}</p>
-      <div className={styles.ProductInfo__cartInfo}>
-        <div className={styles.ProductInfo__price}>&#36; {price}</div>
+    <Box sx={styleInfoBox}>
+      <Typography sx={styleTitle} component="h1" variant="h1">
+        {name}
+      </Typography>
+      <Typography sx={styleDescription} component="p" variant="body1">
+        {description}
+      </Typography>
+      <Typography sx={styleTitle} component="h2" variant="h2">
+        Details
+      </Typography>
+      <Typography sx={styleDescription} component="p" variant="body1">
+        {details}
+      </Typography>
+      <Stack
+        flexWrap="wrap"
+        direction="row"
+        justifyContent={{ xs: "space-between" }}
+        spacing={{ xs: 0, md: 2 }}
+      >
+        <Typography
+          order={1}
+          variant="caption"
+          color="secondary.main"
+          component="div"
+        >
+          &#36; {price}
+        </Typography>
         <Counter />
-        <Button />
-        <div className={styles.ProductInfo__like}>
-          {like ? <Like /> : <Unlike />}
-        </div>
-      </div>
-    </div>
+        <Button variant="contained" sx={styleButton}>
+          Add to cart
+        </Button>
+        <Like like={like} />
+      </Stack>
+    </Box>
   );
 };
 
