@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useMemo } from "react";
+import { Grid } from "@mui/material";
 
 import Context from "@/context/Search/context";
 import { useAppDispatch, useAppSelector } from "@/state/hooks/hooks";
 import { fetchItemsList } from "@/state/catalogSlice/catalogActions";
 import { IItem } from "@/api/types";
 import ErrorModal from "@/components/ErrorModal/ErrorModal";
-import Card from "@/components/Card/Card";
-
-import styles from "./style.module.scss";
+import CardComponent from "@/components/Card/CardComponent";
+import { styleGridContainer, styleGridItem } from "@/pages/Catalog/styles";
 
 const Catalog: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -21,18 +21,26 @@ const Catalog: React.FC = () => {
 
   const filteredList = useMemo(
     () =>
-      list.filter(({ name }) => name.toLowerCase().includes(context?.value)),
+      list?.filter(({ name }) => name.toLowerCase().includes(context?.value)),
     [list, context?.value]
   );
 
   return (
     <>
       {filteredList && (
-        <ul className={styles.Catalog}>
+        <Grid container sx={styleGridContainer} spacing={{ xs: 2 }}>
           {filteredList.map(({ id, name, like, picture, price }) => {
             return (
-              <li className={styles.Catalog__item} key={id}>
-                <Card
+              <Grid
+                sx={styleGridItem}
+                item
+                xs={6}
+                sm={4}
+                md={3}
+                lg={2}
+                key={id}
+              >
+                <CardComponent
                   id={id}
                   name={name}
                   like={like}
@@ -40,10 +48,10 @@ const Catalog: React.FC = () => {
                   alt={picture.alt}
                   price={price.value}
                 />
-              </li>
+              </Grid>
             );
           })}
-        </ul>
+        </Grid>
       )}
       <ErrorModal />
     </>
