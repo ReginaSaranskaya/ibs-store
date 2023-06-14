@@ -10,7 +10,7 @@ import {
   styleTitle,
 } from "@/components/ProductInfo/styles";
 
-export interface Props {
+export interface IProps {
   name: string;
   like: boolean;
   description: string;
@@ -18,7 +18,7 @@ export interface Props {
   details: string;
 }
 
-const ProductInfo: React.FC<Props> = ({
+const ProductInfo: React.FC<IProps> = ({
   name,
   like,
   description,

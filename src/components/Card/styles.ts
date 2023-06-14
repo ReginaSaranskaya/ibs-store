@@ -21,7 +21,7 @@ export const styleLikeBox = {
   position: "absolute",
   top: "0",
   right: "0",
-  padding: "10px",
+  padding: "0.625rem",
 };
 
 export const styleImageBox = {
@@ -36,7 +36,11 @@ export const styleImageBox = {
 
 export const styleImage = {
   display: "block",
-  width: "37%",
+  width: {
+    xs: "40%",
+    sm: "35%",
+    md: "28%",
+  },
   height: "100%",
 };
 

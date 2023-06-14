@@ -1,6 +1,6 @@
 export const styleInfoBox = {
   padding: {
-    xs: "16px 24px",
+    xs: "1rem 1.5rem",
     md: "0",
   },
 };
@@ -18,7 +18,7 @@ export const styleDescription = {
 };
 
 export const styleButton = {
-  padding: "5px 21px",
+  padding: "0.3125rem 1.3125rem",
   backgroundColor: "#E97F03FF",
   color: "white",
   "&:hover": {

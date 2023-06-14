@@ -3,11 +3,11 @@ import { Checkbox } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-interface Props {
+interface IProps {
   like: boolean;
 }
 
-const Like: React.FC<Props> = ({ like }) => {
+const Like: React.FC<IProps> = ({ like }) => {
   const [checked, setChecked] = useState(like);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

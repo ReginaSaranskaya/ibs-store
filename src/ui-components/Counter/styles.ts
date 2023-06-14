@@ -7,8 +7,8 @@ export const styleStack = {
 export const styleButton = {
   boxSizing: "border-box",
   padding: "0",
-  minWidth: "40px",
-  height: "40px",
+  minWidth: "2.5rem",
+  height: "2.5rem",
   borderRadius: "0",
   borderColor: "#323232",
 };
@@ -18,7 +18,7 @@ export const styleInput = {
   textAlign: "center",
   "& .MuiOutlinedInput-input": {
     boxSizing: "border-box",
-    height: "40px",
+    height: "2.5rem",
     padding: "0",
     border: "none",
     borderBottom: "1px solid #323232",

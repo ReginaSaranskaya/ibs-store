@@ -10,7 +10,6 @@ import CardComponent from "@/components/Card/CardComponent";
 import { styleGridContainer, styleGridItem } from "@/pages/Catalog/styles";
 
 const Catalog: React.FC = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   const list = useAppSelector((state): IItem[] => state.catalog.items);
   const context = useContext(Context);
   const dispatch = useAppDispatch();

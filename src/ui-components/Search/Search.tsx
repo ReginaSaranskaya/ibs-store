@@ -4,12 +4,12 @@ import { TextField } from "@mui/material";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { styleSearch, styleSearchIcon } from "@/ui-components/Search/styles";
 
-interface Props {
+interface IProps {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
 }
 
-const Search: React.FC<Props> = ({ handleChange, value }) => (
+const Search: React.FC<IProps> = ({ handleChange, value }) => (
   <TextField
     sx={styleSearch}
     type="search"

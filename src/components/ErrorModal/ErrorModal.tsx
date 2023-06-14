@@ -5,13 +5,13 @@ import { Modal, Box, Typography } from "@mui/material";
 import { instance } from "@/api";
 import { styleModal, styleText } from "@/components/ErrorModal/styles";
 
-export interface Error {
+export interface IError {
   status?: number;
   message: string;
 }
 
 const ErrorModal: React.FC = () => {
-  const [error, setError] = useState<null | Error>(null);
+  const [error, setError] = useState<null | IError>(null);
 
   useEffect(() => {
     const errorInterceptor = instance.interceptors.response.use(
@@ -30,7 +30,7 @@ const ErrorModal: React.FC = () => {
 
   return (
     error && (
-      <Modal open={!!error}>
+      <Modal open>
         <Box sx={styleModal}>
           <Typography sx={styleText} variant="h1">
             {error.status}

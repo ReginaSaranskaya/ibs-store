@@ -7,14 +7,14 @@ export const styleHeaderBox = {
 export const styleLink = {
   margin: "0",
   padding: "0",
-  width: "20px",
+  width: "1.25rem",
   textDecoration: "none",
   display: "block",
   color: "#323232",
 
   "&MuiButton-startIcon": {
     margin: "0",
-    width: "20px",
+    width: "1.25rem",
   },
 
   "&:hover": {

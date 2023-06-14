@@ -12,7 +12,7 @@ import {
   styleName,
 } from "@/components/Card/styles";
 
-interface CardProps {
+interface ICardProps {
   id: string;
   name: string;
   alt: string;
@@ -21,7 +21,7 @@ interface CardProps {
   picture: string;
 }
 
-const CardComponent: React.FC<CardProps> = ({
+const CardComponent: React.FC<ICardProps> = ({
   id,
   name,
   alt,

@@ -6,12 +6,12 @@ import {
   styleImage,
 } from "@/components/ProductImage/styles";
 
-interface ProductImageProps {
+interface IProps {
   src: string;
   alt: string;
 }
 
-const ProductImage: React.FC<ProductImageProps> = ({ src, alt }) => {
+const ProductImage: React.FC<IProps> = ({ src, alt }) => {
   return (
     <Box sx={styleContainerImage}>
       <Box sx={styleBoxImage}>

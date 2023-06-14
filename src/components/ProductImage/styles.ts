@@ -43,7 +43,7 @@ export const styleImage = {
     md: "7rem",
   },
   paddingBottom: {
-    xs: "16px",
+    xs: "1rem",
     md: "0",
   },
 };
