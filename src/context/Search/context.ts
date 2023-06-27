@@ -1,13 +1,13 @@
 import React from "react";
 
-export interface SearchContext {
+export interface ISearchContext {
   value: string;
   change: (str: string) => void;
 }
 
-const initialValue: SearchContext = {
+const initialValue: ISearchContext = {
   value: "",
   change: () => {},
 };
 
-export default React.createContext<SearchContext>(initialValue);
+export default React.createContext<ISearchContext>(initialValue);

@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-import styles from "./style.module.scss";
+import { Button, TextField, Stack } from "@mui/material";
+
+import {
+  styleButton,
+  styleInput,
+  styleStack,
+} from "@/ui-components/Counter/styles";
 
 const Counter: React.FC = () => {
   const [count, setCount] = useState(1);
@@ -19,30 +25,32 @@ const Counter: React.FC = () => {
   };
 
   return (
-    <div className={styles.Counter}>
-      <button
-        type="button"
+    <Stack sx={styleStack} direction="row">
+      <Button
+        color="secondary"
+        sx={styleButton}
+        variant="outlined"
         onClick={decrement}
-        className={styles.Counter__button}
       >
         &#8722;
-      </button>
-      <label className={styles.Counter__label}>
-        <input
-          value={count === 0 ? "" : count}
-          type="number"
-          className={styles.Counter__input}
-          onChange={handleChange}
-        />
-      </label>
-      <button
-        type="button"
+      </Button>
+      <TextField
+        sx={styleInput}
+        type="number"
+        size="small"
+        variant="outlined"
+        value={count}
+        onChange={handleChange}
+      />
+      <Button
+        color="secondary"
+        sx={styleButton}
+        variant="outlined"
         onClick={increment}
-        className={styles.Counter__button}
       >
         +
-      </button>
-    </div>
+      </Button>
+    </Stack>
   );
 };
 

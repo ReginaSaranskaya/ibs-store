@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router";
+import { Stack } from "@mui/material";
 
 import ProductInfo from "@/components/ProductInfo/ProductInfo";
 import { useAppDispatch, useAppSelector } from "@/state/hooks/hooks";
+
+import { styleProduct } from "@/pages/Product/styles";
 import ProductImage from "@/components/ProductImage/ProductImage";
 import { fetchItem } from "@/state/productSlice/productActions";
-
-import styles from "./style.module.scss";
 import { IItem } from "@/api/types";
 
 const Product: React.FC = () => {
@@ -25,7 +26,11 @@ const Product: React.FC = () => {
 
   return (
     productInfo && (
-      <div className={styles.Product}>
+      <Stack
+        sx={styleProduct}
+        spacing={2}
+        direction={{ xs: "column", md: "row" }}
+      >
         <ProductImage
           src={productInfo.picture.path}
           alt={productInfo.picture.alt}
@@ -37,7 +42,7 @@ const Product: React.FC = () => {
           price={productInfo.price.value}
           like={productInfo.like}
         />
-      </div>
+      </Stack>
     )
   );
 };

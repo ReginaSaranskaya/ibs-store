@@ -1,19 +1,23 @@
 import React from "react";
+import { Box } from "@mui/material";
+import {
+  styleBoxImage,
+  styleContainerImage,
+  styleImage,
+} from "@/components/ProductImage/styles";
 
-import styles from "./style.module.scss";
-
-interface ProductImageProps {
+interface IProps {
   src: string;
   alt: string;
 }
 
-const ProductImage: React.FC<ProductImageProps> = ({ src, alt }) => {
+const ProductImage: React.FC<IProps> = ({ src, alt }) => {
   return (
-    <div className={styles.ProductImage}>
-      <div className={styles.ProductImage__container}>
-        <img className={styles.ProductImage__image} src={src} alt={alt} />
-      </div>
-    </div>
+    <Box sx={styleContainerImage}>
+      <Box sx={styleBoxImage}>
+        <Box component="img" sx={styleImage} src={src} alt={alt} />
+      </Box>
+    </Box>
   );
 };
 

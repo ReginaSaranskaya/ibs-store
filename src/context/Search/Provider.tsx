@@ -2,19 +2,14 @@ import React, { useMemo, useState } from "react";
 
 import Context from "./context";
 
-interface Props {
+interface IProps {
   children: React.ReactNode;
 }
 
-const Provider: React.FC<Props> = ({ children }) => {
+const Provider: React.FC<IProps> = ({ children }) => {
   const [search, setSearch] = useState("");
 
-  const handleChange = (str: string) => setSearch(str);
-
-  const value = useMemo(
-    () => ({ value: search, change: handleChange }),
-    [search]
-  );
+  const value = useMemo(() => ({ value: search, change: setSearch }), [search]);
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 };

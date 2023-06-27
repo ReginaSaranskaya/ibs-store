@@ -1,26 +1,27 @@
 import React from "react";
 
-import { ReactComponent as SearchImg } from "@/assets/images/search.svg";
+import { TextField } from "@mui/material";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { styleSearch, styleSearchIcon } from "@/ui-components/Search/styles";
 
-import styles from "./style.module.scss";
-
-interface Props {
+interface IProps {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
 }
 
-const Search: React.FC<Props> = ({ handleChange, value }) => (
-  <label className={styles.Search}>
-    <SearchImg className={styles.Search__image} />
-    <input
-      type="text"
-      id="search"
-      value={value}
-      className={styles.Search__input}
-      onChange={handleChange}
-      placeholder="Search products"
-    />
-  </label>
+const Search: React.FC<IProps> = ({ handleChange, value }) => (
+  <TextField
+    sx={styleSearch}
+    type="search"
+    variant="standard"
+    placeholder="Search products"
+    onChange={handleChange}
+    value={value}
+    size="small"
+    InputProps={{
+      startAdornment: <SearchOutlinedIcon sx={styleSearchIcon} />,
+    }}
+  />
 );
 
 export default Search;
