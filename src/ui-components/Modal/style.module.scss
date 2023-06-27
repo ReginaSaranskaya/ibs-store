@@ -1,0 +1,44 @@
+@import "../../assets/styles/extends";
+
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  @extend %display;
+  justify-content: center;
+  background: rgba(25, 25, 25, 0.4);
+  backdrop-filter: blur($rem);
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s;
+
+  &__active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    @extend %display;
+    justify-content: center;
+    background: rgba(25, 25, 25, 0.4);
+    backdrop-filter: blur($rem);
+    transition: .3s;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__content {
+    position: relative;
+    padding: 2.5rem;
+    width: 50%;
+    border-radius: 1.5rem;
+    @extend %display;
+    flex-direction: column;
+    justify-content: center;
+    gap: $rem;
+    background-color: white;
+  }
+}
+

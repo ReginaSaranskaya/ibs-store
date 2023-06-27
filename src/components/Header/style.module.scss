@@ -1,0 +1,17 @@
+@import '../../assets/styles/extends';
+
+.Header {
+  @extend %display;
+  margin-bottom: 1.25rem;
+  padding: 1rem 0;
+
+  &__wrapper {
+    @extend %display;
+    width: 3.75rem;
+  }
+
+  &__icon:active, &__icon:hover {
+    fill: #E97F0380;
+    transition: $transition;
+  }
+}
